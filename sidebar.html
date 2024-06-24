@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad Basic</title>
+    <link rel="stylesheet" href="style/notepad.css" />
+    <style>
+      body,
+      html {
+        width: 400px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main-container">
+      <header>
+        <header id="header"></header>
+      </header>
+      <textarea
+        id="notes"
+        placeholder="Start typing your notes here..."
+      ></textarea>
+      <button id="save-note-button">
+        Save Note
+        <div class="icon">
+          <span>
+            <svg width="21" height="21" viewBox="0 0 25 25" fill="none">
+              <path
+                d="M3,2 V22 H21 V2 Z M5,4 H19 M5,7 H19 M5,10 H19 M5,13 H19 M5,16 H19 M5,19 H19"
+                fill="none"
+                stroke="var(--primary-color)"
+              />
+            </svg>
+          </span>
+        </div>
+      </button>
+      <div id="folder-select-section" style="display: none">
+        <select id="folder-select">
+          <option value="none">Don't Save in Any Folder</option>
+        </select>
+        <button id="save-in-folder-button">
+          Save Note
+          <div class="icon">
+            <span>
+              <svg
+                width="21"
+                height="21"
+                viewBox="0 0 25 25"
+                fill="none"
+                id="folder-save-icon"
+              >
+                <path
+                  d="M3,2 V22 H21 V2 Z M5,4 H19 M5,7 H19 M5,10 H19 M5,13 H19 M5,16 H19 M5,19 H19"
+                  fill="none"
+                  stroke="var(--primary-color)"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div class="animated-border"></div>
+      <div id="notes-title">All Notes</div>
+      <div id="saved-notes"></div>
+      <div id="folders-section"></div>
+    </div>
+    <footer>
+      <button id="add-folder-button">
+        Add Folder
+        <span class="icon">
+          <svg
+            id="plus-icon"
+            width="21"
+            height="21"
+            viewBox="0 0 25 25"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="25" height="25" fill="black" rx="3" ry="3" />
+            <path
+              d="M12 5v15M5 12h15"
+              stroke="var(--primary-color)"
+              stroke-width="2"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        type="text"
+        id="folder-name-input-field"
+        placeholder="Folder Name"
+      />
+      <button id="clear-folder-selection" style="display: none">
+        Back to All Notes
+        <span class="icon">
+          <svg
+            id="back-arrow-icon"
+            width="21"
+            height="21"
+            viewBox="0 0 25 25"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 5l-7 7 7 7"
+              stroke="black"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+        </span>
+      </button>
+    </footer>
+    <div id="color-selector-section">
+      <button id="change-primary-color-button">Change Primary Color</button>
+      <button id="set-default-color-button">Set to Default</button>
+    </div>
+    <div id="credits">Created by Badhri N Hari</div>
+    <script src="scripts/notepad.js"></script>
+  </body>
+</html>

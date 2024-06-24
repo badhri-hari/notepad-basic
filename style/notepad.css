@@ -1,0 +1,375 @@
+:root {
+  --primary-color: #fff49c;
+}
+
+svg path {
+  stroke: var(--primary-color);
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(72, 72, 72);
+}
+
+#main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+header {
+  background-color: var(--primary-color);
+  width: calc(100% - 20px);
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 50px;
+  border: 1px solid var(--primary-color);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: height 0.25s ease-in-out;
+}
+
+.header-small {
+  height: 8px;
+}
+
+textarea {
+  height: 15%;
+  min-height: 10%;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  resize: vertical;
+  outline: none;
+  transition: height 0.25s linear;
+}
+
+textarea:focus {
+  height: 40%;
+}
+
+button {
+  padding: 1.1rem 2.5rem 1.1rem 3.5rem;
+  border-radius: 99rem;
+  background-color: var(--primary-color);
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+button .icon {
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .icon span {
+  background: black;
+  border-radius: 100%;
+  padding: 0rem;
+  width: 0rem;
+  height: 0rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease-in-out;
+}
+
+button:hover .icon span {
+  padding: 0.6rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#save-note-button {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+#saved-notes,
+#folders-section {
+  background-color: rgb(111, 111, 111);
+  border: solid rgb(111, 111, 111) 1px;
+  border-radius: 5px;
+  overflow-y: auto;
+  height: 25vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(111, 111, 111);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.nothing-is-there {
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20%;
+  color: #faebd7;
+}
+
+.saved-note,
+.folder-name {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-left: 8px solid var(--primary-color);
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.saved-note h4 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.saved-note.selected {
+  border-left: 8px solid #e7dc8b;
+  background-color: rgb(230, 215, 196);
+}
+
+.delete-icon {
+  width: 10px;
+  height: 10px;
+  display: inline;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-right: 0;
+}
+
+.delete-icon:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+#folders-section {
+  margin-top: 15px;
+  height: 35vh;
+}
+
+.folder-name {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 15px;
+  border: none;
+}
+
+.folder-icon {
+  display: inline;
+  width: 28px;
+  height: 28px;
+  margin-left: 200px;
+}
+
+.folder-icon img {
+  height: 100%;
+  width: 100%;
+}
+
+.folder-name.selected {
+  background-color: rgb(230, 215, 196);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+  gap: 10px;
+}
+
+#add-folder-button,
+#change-primary-color-button,
+#set-default-color-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem 1rem 1.1rem 3.5rem;
+  transition: padding-right 0.25s ease-in-out;
+  flex-grow: 1;
+}
+
+#add-folder-button .icon {
+  margin-left: 0.5em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out,
+    margin-left 0.25s ease-in-out;
+}
+
+#add-folder-button:hover {
+  padding-right: 2.5em;
+}
+
+#add-folder-button:hover .icon {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 0;
+}
+
+#clear-folder-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem 1rem 1.1rem 3.5rem;
+  transition: padding-right 0.25s ease-in-out;
+  flex-grow: 1;
+}
+
+#clear-folder-selection .icon {
+  margin-left: 0.5em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out,
+    margin-left 0.25s ease-in-out;
+}
+
+#clear-folder-selection:hover {
+  padding-right: 2.5em;
+}
+
+#clear-folder-selection:hover .icon {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 0;
+}
+
+#folder-name-input-field {
+  display: none;
+  outline: none;
+  height: 20px;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+#folder-select-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#folder-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+  font-size: 15px;
+}
+
+#folder-select option {
+  background-color: white;
+  color: #333;
+}
+
+#save-in-folder-button {
+  padding: 1rem 2.5rem;
+  border-radius: 100px;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#save-in-folder-button .icon {
+  margin-left: 0.5em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out,
+    margin-left 0.25s ease-in-out;
+}
+
+#save-in-folder-button:hover .icon {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 0;
+}
+
+#notes-title {
+  font-size: 1.5em;
+  color: white;
+  font-family: inherit;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#alert-container {
+  display: none;
+  background-color: #cd5660;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+#color-selector-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#change-primary-color-button,
+#set-default-color-button {
+  padding: 1px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+#change-primary-color-button:hover,
+#set-default-color-button:hover {
+  opacity: 0.85;
+}
+
+#credits {
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+}
