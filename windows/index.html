@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad Basic</title>
+    <link rel="stylesheet" href="style/notepad.css">
+</head>
+<body>
+    <div id="main-container">
+        <header id="header"></header>
+        <textarea id="notes" placeholder="Start typing your notes here..."></textarea>
+        <button id="save-note-button">Save Note</button>
+        <div id="folder-select-section" style="display: none">
+            <select id="folder-select">
+                <option value="none">Don't Save in Any Folder</option>
+            </select>
+            <button id="save-in-folder-button">Save Note</button>
+        </div>
+        <div class="animated-border"></div>
+        <div id="notes-title">All Notes</div>
+        <div id="saved-notes"></div>
+        <div id="folders-section"></div>
+    </div>
+    <footer>
+        <button id="add-folder-button">Add Folder</button>
+        <input type="text" id="folder-name-input-field" placeholder="Folder Name" />
+        <button id="clear-folder-selection" style="display: none">Back to All Notes</button>
+    </footer>
+    <div id="color-selector-section">
+        <button id="change-primary-color-button">Change Primary Color</button>
+        <button id="set-default-color-button">Set to Default</button>
+    </div>
+    <div id="credits">Created by Badhri N Hari</div>
+    <script src="scripts/notepad.js"></script>
+</body>
+</html>
